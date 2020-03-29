@@ -3,7 +3,7 @@
 ## Installation
 
 * python3 -m venv .
-* bin/pip install dev-requirements.txt
+* bin/pip install -r dev-requirements.txt
 
 ## Run tests
 
