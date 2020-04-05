@@ -18,17 +18,17 @@ def test_charnums__charnums__2():
     assert charnums("HaLLo") == "81121215"
 
 
-def test_charnums___convert_1():
+def test_charnums___convert__1():
     """Konvertiert Großbuchstaben in Kleinbuchstaben."""
     assert _convert("HaLLo") == "hallo"
 
 
-def test_charnums___convert_2():
+def test_charnums___convert__2():
     """Entfernt Leerzeichen."""
     assert _convert(" H a    LLo  ") == "hallo"
 
 
-def test_charnums___convert_3():
+def test_charnums___convert__3():
     """Übersetzt Umlaute in zwei Buchstaben."""
     assert _convert("ÄÖÜßäöü") == "aeoeueßaeoeue"
 
