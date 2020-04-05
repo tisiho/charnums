@@ -1,3 +1,7 @@
+def _convert(input):
+    """Bereite `input` für `charnums` vor."""
+
+
 def charnums(string):
     """Konvertiere String in Folge von Buchstabenpoitinnen."""
     ergebnis = ""
