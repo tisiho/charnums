@@ -30,7 +30,7 @@ def test_charnums___convert__2():
 
 def test_charnums___convert__3():
     """Übersetzt Umlaute in zwei Buchstaben."""
-    assert _convert("ÄÖÜßäöü") == "aeoeueßaeoeue"
+    assert _convert("ÄÖÜßäöü") == "aeoeuessaeoeue"
 
 
 @pytest.mark.parametrize("input,output", (
