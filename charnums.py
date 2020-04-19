@@ -14,6 +14,7 @@ ersatz = {
     "'": 'minuten',
 }
 
+
 def _convert(input):
     """Bereite `input` für `charnums` vor."""
     no_space = ''
@@ -32,9 +33,20 @@ def _convert(input):
 
 
 def charnums(string):
-    """Konvertiere String in Folge von Buchstabenpoitinnen."""
+    """Konvertiere String in Folge von Buchstabenpositionen."""
     ergebnis = ""
     for c in _convert(string):
         zw = str(ord(c) - 96)
         ergebnis += zw
     return ergebnis
+
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(
+        description='Convert string in list of positions in alphabet.')
+    parser.add_argument(
+        'string', type=str, help='the string to be converted')
+
+    args = parser.parse_args()
+    print(charnums(args.string))
