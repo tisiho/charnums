@@ -1,3 +1,19 @@
+ersatz = {
+    '1': 'eins',
+    '2': 'zwei',
+    '3': 'drei',
+    '4': 'vier',
+    '5': 'fuenf',
+    '6': 'sechs',
+    '7': 'sieben',
+    '8': 'acht',
+    '9': 'neun',
+    '0': 'null',
+    '°': 'grad',
+    '.': 'punkt',
+    "'": 'minuten',
+}
+
 def _convert(input):
     """Bereite `input` für `charnums` vor."""
     no_space = ''
