@@ -1,30 +1,38 @@
+ersatz = {
+    "ä": "ae",
+    "ö": "oe",
+    "ü": "ue",
+    "ß": "ss",
+    "1": "eins",
+    "2": "zwei",
+    "3": "drei",
+    "4": "vier",
+    "5": "fuenf",
+    "6": "sechs",
+    "7": "sieben",
+    "8": "acht",
+    "9": "neun",
+    "0": "null",
+    "°": "grad",
+    ".": "punkt",
+    "'": "minuten",
+}
+
+
 def _convert(input):
     """Bereite `input` für `charnums` vor."""
-    no_space = ''
     ergebnis = ""
     input = input.lower()
 
     for x in input:
-        if not x.isspace():
-            no_space += x
-
-    ergebnis = no_space.replace("ä", "ae")
-    ergebnis = ergebnis.replace("ö", "oe")
-    ergebnis = ergebnis.replace("ü", "ue")
-    ergebnis = ergebnis.replace("ß", "ss")
-    ergebnis = ergebnis.replace("1", "eins")
-    ergebnis = ergebnis.replace("2", "zwei")
-    ergebnis = ergebnis.replace("3", "drei")
-    ergebnis = ergebnis.replace("4", "vier")
-    ergebnis = ergebnis.replace("5", "fuenf")
-    ergebnis = ergebnis.replace("6", "sechs")
-    ergebnis = ergebnis.replace("7", "sieben")
-    ergebnis = ergebnis.replace("8", "acht")
-    ergebnis = ergebnis.replace("9", "neun")
-    ergebnis = ergebnis.replace("0", "null")
-    ergebnis = ergebnis.replace("°", "grad")
-    ergebnis = ergebnis.replace(".", "punkt")
-    ergebnis = ergebnis.replace("'", "minuten")
+        if x.isspace():
+            continue
+        elif x.isascii() and x.isalpha():
+            ergebnis += x
+        elif x in ersatz:
+            ergebnis += ersatz[x]
+        else:
+            raise ValueError(f"Don't know how to convert {x!r}")
     return ergebnis
 
 

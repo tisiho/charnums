@@ -58,3 +58,10 @@ def test_charnums___convert_4(input, output):
 def test_charnums___convert_5(input, output):
     """Übersetzt einige Sonderzeichen in Buchstaben."""
     assert _convert(input) == output
+
+
+def test_charnums___convert_6():
+    """It bails on unknown symbols."""
+    with pytest.raises(ValueError) as err:
+        _convert(';')
+    assert "Don't know how to convert ';'" == str(err.value)
