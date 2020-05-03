@@ -48,3 +48,13 @@ def test_charnums___convert__3():
 def test_charnums___convert_4(input, output):
     """Übersetzt Ziffern in Buchstaben."""
     assert _convert(input) == output
+
+
+@pytest.mark.parametrize("input,output", (
+    ("°", "grad"),
+    ("'", "minuten"),
+    (".", "punkt"),
+))
+def test_charnums___convert_5(input, output):
+    """Übersetzt einige Sonderzeichen in Buchstaben."""
+    assert _convert(input) == output
