@@ -53,4 +53,7 @@ if __name__ == '__main__':
         'string', type=str, help='the string to be converted')
 
     args = parser.parse_args()
+    print('To be encoded string:')
+    print(_convert(args.string))
+    print('Encoded string:')
     print(charnums(args.string))
